@@ -3,7 +3,6 @@ package com.appspector.flutter;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
-import io.flutter.plugin.common.PluginRegistry.Registrar;
 
 import static com.appspector.flutter.MainAppSpectorHandler.internalRegister;
 
@@ -26,15 +25,5 @@ public class AppSpectorPlugin implements FlutterPlugin {
             mainAppSpectorHandler.unregister();
             mainAppSpectorHandler = null;
         }
-    }
-
-    /**
-     * Plugin registration.
-     * Deprecated: it's old plugin registration which is needed for Flutter v1
-     */
-    @SuppressWarnings("deprecation")
-    @Deprecated
-    public static void registerWith(Registrar registrar) {
-        internalRegister(registrar.context().getApplicationContext(), registrar.messenger());
     }
 }
